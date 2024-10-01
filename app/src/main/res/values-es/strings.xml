@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">calculadora</string>
     <string name="tvDisplay">0</string>
@@ -20,5 +21,4 @@
     <string name="bZero">0</string>
     <string name="bDot">.</string>
     <string name="bEquals">=</string>
-
 </resources>
