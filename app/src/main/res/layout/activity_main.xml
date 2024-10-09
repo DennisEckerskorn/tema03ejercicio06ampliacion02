@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/display"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:background="@color/darkGray"
@@ -33,183 +33,247 @@
 
     <!-- Contenedor principal para los botones -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <!-- Fila 1 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <Button
                 android:id="@+id/bCE"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:text="@string/bCE" />
 
             <Button
                 android:id="@+id/bNegativeSign"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:text="@string/bSign" />
 
             <Button
                 android:id="@+id/bPercent"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
                 android:text="@string/bPercent" />
 
             <Button
                 android:id="@+id/bDivide"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/red"
+                android:textStyle="bold"
                 android:text="@string/bDivide" />
         </LinearLayout>
 
         <!-- Fila 2 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <Button
                 android:id="@+id/bSeven"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bSeven" />
 
             <Button
                 android:id="@+id/bEigth"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bEigth" />
 
             <Button
                 android:id="@+id/bNine"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bNine" />
 
             <Button
                 android:id="@+id/bMultiply"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/red"
+                android:textStyle="bold"
                 android:text="@string/bMultiply" />
         </LinearLayout>
 
         <!-- Fila 3 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <Button
                 android:id="@+id/bFour"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bFour" />
 
             <Button
                 android:id="@+id/bFive"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bFive" />
 
             <Button
                 android:id="@+id/bSix"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bSix" />
 
             <Button
                 android:id="@+id/bMinus"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/red"
+                android:textStyle="bold"
                 android:text="@string/bMinus" />
         </LinearLayout>
 
         <!-- Fila 4 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <Button
                 android:id="@+id/bOne"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bOne" />
 
             <Button
                 android:id="@+id/bTwo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bTwo" />
 
             <Button
                 android:id="@+id/bThree"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bThree" />
 
             <Button
                 android:id="@+id/bPlus"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/red"
+                android:textStyle="bold"
                 android:text="@string/bPlus" />
         </LinearLayout>
 
         <!-- Fila 5 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="center">
 
             <Button
                 android:id="@+id/bZero"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bZero" />
 
             <Button
                 android:id="@+id/bDot"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
                 android:text="@string/bDot" />
 
             <Button
                 android:id="@+id/bEquals"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/ligthGray"
+                android:textColor="@color/green"
+                android:textStyle="bold"
                 android:text="@string/bEquals" />
         </LinearLayout>
 

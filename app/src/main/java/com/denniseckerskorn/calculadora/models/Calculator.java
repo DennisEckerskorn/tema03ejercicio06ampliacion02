@@ -26,17 +26,16 @@ public class Calculator {
                 currentState = State.OPERAND_ENTERED;
                 break;
             case OPERAND_ENTERED:
+                secondOperand.setLength(0);
                 secondOperand.append(value);
                 currentState = State.OPERAND_SELECTED; //Prepare for operator selection
                 break;
             case OPERAND_SELECTED:
                 secondOperand.append(value); // Update second operand
-                currentState = State.RESULT_CALCULATED; //Prepare for calculation
                 break;
             case RESULT_CALCULATED: //Reset for new calculation
-                firstOperand = new StringBuilder(value);
-                secondOperand.setLength(0);
-                operator = null;
+                clearAll(); // Resets for new calculation
+                firstOperand.append(value);
                 currentState = State.OPERAND_ENTERED;
                 break;
         }
@@ -44,8 +43,6 @@ public class Calculator {
 
     public void inputDot() {
         switch (currentState) {
-            case INITIAL:
-                break;
             case OPERAND_ENTERED:
                 if (!firstDotUsed) {
                     firstOperand.append(".");
@@ -58,6 +55,7 @@ public class Calculator {
                     secondDotUsed = true;
                 }
                 break;
+            case INITIAL:
             case RESULT_CALCULATED:
                 break;
         }
@@ -69,21 +67,24 @@ public class Calculator {
         }
         switch (currentState) {
             case OPERAND_ENTERED:
-                this.operator = operator;
-                currentState = State.OPERAND_SELECTED; //Wait for second operand
+                this.operator = operator; // Set operator after first operand
+                currentState = State.OPERAND_SELECTED; // Wait for second operand
                 break;
             case OPERAND_SELECTED:
-                //Invalid operation, should calculate first
+                // You could implement functionality to change the operator here if needed
                 break;
             case RESULT_CALCULATED:
-                this.operator = operator;
-                currentState = State.OPERAND_ENTERED; //Start new calculation
+                // Start a new calculation
+                this.operator = operator; // Set new operator after result
+                currentState = State.OPERAND_ENTERED; // Reset for new calculation
                 break;
             case INITIAL:
-                //Cannot input operator in initial state
+                // Cannot input operator in initial state
                 break;
         }
     }
+
+
 
     public double calculate() {
         if (currentState != State.OPERAND_SELECTED) {
@@ -118,7 +119,11 @@ public class Calculator {
             default:
                 throw new UnsupportedOperationException("Invalid Operator");
         }
-        currentState = State.RESULT_CALCULATED;
+        // Prepare for the next calculation
+        firstOperand = new StringBuilder(String.valueOf(result)); // Result becomes the first operand
+        secondOperand.setLength(0); // Clear second operand
+        operator = null; // Reset operator
+        currentState = State.RESULT_CALCULATED; // Set the state to RESULT_CALCULATED
         return result;
     }
 
@@ -162,6 +167,17 @@ public class Calculator {
         currentState = State.INITIAL;
         firstDotUsed = false;
         secondDotUsed = false;
+    }
+
+    public String getCurrentOperand() {
+        if (currentState == State.OPERAND_ENTERED) {
+            return firstOperand.toString();
+        } else if (currentState == State.OPERAND_SELECTED) {
+            return secondOperand.toString();
+        } else if (currentState == State.RESULT_CALCULATED) {
+            return firstOperand.toString(); // Muestra el resultado
+        }
+        return "0"; // Estado inicial
     }
 
     public State getCurrentState() {
