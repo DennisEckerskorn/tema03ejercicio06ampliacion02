@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "=":
                 if (calculator.getCurrentState() == State.OPERAND_SELECTED || calculator.getCurrentState() == State.RESULT_CALCULATED) {
-                    double result = calculator.calculate(); // Call calculate when "=" is pressed
+                    double result = calculator.calculate();
                     updateDisplay(String.valueOf(result));
                 }
                 break;
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
             case "7":
             case "8":
             case "9":
-                calculator.inputNumber(buttonText); // Update operand based on button pressed
-                updateDisplay(calculator.getCurrentOperand()); // Display current operand
+                calculator.inputNumber(buttonText);
+                updateDisplay(calculator.getCurrentOperand());
                 break;
             default:
                 break;

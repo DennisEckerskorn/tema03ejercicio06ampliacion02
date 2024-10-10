@@ -28,13 +28,13 @@ public class Calculator {
             case OPERAND_ENTERED:
                 secondOperand.setLength(0);
                 secondOperand.append(value);
-                currentState = State.OPERAND_SELECTED; //Prepare for operator selection
+                currentState = State.OPERAND_SELECTED;
                 break;
             case OPERAND_SELECTED:
-                secondOperand.append(value); // Update second operand
+                secondOperand.append(value);
                 break;
-            case RESULT_CALCULATED: //Reset for new calculation
-                clearAll(); // Resets for new calculation
+            case RESULT_CALCULATED:
+                clearAll();
                 firstOperand.append(value);
                 currentState = State.OPERAND_ENTERED;
                 break;
@@ -67,23 +67,19 @@ public class Calculator {
         }
         switch (currentState) {
             case OPERAND_ENTERED:
-                this.operator = operator; // Set operator after first operand
-                currentState = State.OPERAND_SELECTED; // Wait for second operand
+                this.operator = operator;
+                currentState = State.OPERAND_SELECTED;
                 break;
             case OPERAND_SELECTED:
-                // You could implement functionality to change the operator here if needed
                 break;
             case RESULT_CALCULATED:
-                // Start a new calculation
-                this.operator = operator; // Set new operator after result
-                currentState = State.OPERAND_ENTERED; // Reset for new calculation
+                this.operator = operator;
+                currentState = State.OPERAND_ENTERED;
                 break;
             case INITIAL:
-                // Cannot input operator in initial state
                 break;
         }
     }
-
 
 
     public double calculate() {
@@ -119,11 +115,11 @@ public class Calculator {
             default:
                 throw new UnsupportedOperationException("Invalid Operator");
         }
-        // Prepare for the next calculation
-        firstOperand = new StringBuilder(String.valueOf(result)); // Result becomes the first operand
-        secondOperand.setLength(0); // Clear second operand
-        operator = null; // Reset operator
-        currentState = State.RESULT_CALCULATED; // Set the state to RESULT_CALCULATED
+
+        firstOperand = new StringBuilder(String.valueOf(result));
+        secondOperand.setLength(0);
+        operator = null;
+        currentState = State.RESULT_CALCULATED;
         return result;
     }
 
@@ -175,9 +171,9 @@ public class Calculator {
         } else if (currentState == State.OPERAND_SELECTED) {
             return secondOperand.toString();
         } else if (currentState == State.RESULT_CALCULATED) {
-            return firstOperand.toString(); // Muestra el resultado
+            return firstOperand.toString();
         }
-        return "0"; // Estado inicial
+        return "0";
     }
 
     public State getCurrentState() {
